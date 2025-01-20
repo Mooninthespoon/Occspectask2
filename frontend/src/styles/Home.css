@@ -1,0 +1,38 @@
+.page{
+    background-image: url(../assets/Capybara.jpg);
+    background-size: cover;
+    background-position: center;
+    flex-wrap: wrap;
+}
+
+.contain{
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10%;
+    border-style: dashed;
+}
+
+.navigation{
+    position: absolute;
+    top: 0;
+    text-align: left;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.5);
+    margin: 5px;
+    width: 97%;
+    
+    
+}
+
+.icon-text{
+    float:left;
+    width: 40%;
+    max-width: 200px;
+}
+
+.Title{
+    float :right ;
+    font-size: medium;
+    color: white;
+}
