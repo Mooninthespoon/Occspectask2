@@ -21,7 +21,7 @@ function Home() {
         <div className="page d-flex flex-column justify-content-center align-items-center vh-100">
             <nav className="navigation sticky-div">
                 <div className="icon-text ">
-                    <img src={giraffe} width={30} alt="giraffe icon"/>
+                    <img src={giraffe} width={50} alt="giraffe icon"/>
                     <h2 className="Title">Riget Zoo Adventures</h2>
                 </div>
                 <div></div>
