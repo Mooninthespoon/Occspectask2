@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from "react";
-import capybara from '../assets/Capybara.jpg';
 import axios from 'axios';
 import '../styles/Style.css'
 import giraffe from '../assets/giraffe.png'
 
 function Booking() {
-    const [message, setMessage] = useState('');
-    const [different, setDiff] = useState('');
-
-    useEffect(() => {
-        axios.get('http://localhost:3001')
-            .then(response => setMessage(response.data))
-            .catch(error => console.error('Error fetching data:', error));
-        axios.get('http://localhost:3001/a')
-            .then(response => setDiff(response.data))
-            .catch(error => console.error('Error fetching data:', error));
-    },[]);
-
+/*    
+    function handleForm(form) {
+        form.preventDefault();
+        axios.post('localhost:3001/book',form)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error){
+                console.log(error);
+            })
+            .then(console.log("sent"))
+    
+    }
+*/
     return(
         <div className="page d-flex flex-column justify-content-center align-items-center vh-100">
             <nav className="navigation sticky-div">
@@ -32,10 +33,25 @@ function Booking() {
                 </ul>
             </nav>
             <div className="contain text-center justify-content-center align-items-center">
-                <img src={capybara} alt="Paul the Capybara"/>
-                <p>This is the booking page</p>
-                <p>{message}</p>
-                <p>{different}</p>
+                <h2 id="book-now-title">Book Now</h2>
+                <div className="form-holder">   
+                    <form method="post" action={'localhost:3001/book'}/*onSubmit={handleForm}*/>
+                        <label>
+                            Your Name: 
+                            <input name="name"/>
+                        </label>
+                        <hr/>
+                        <p>
+                            Choose a Site:
+                            <hr/>
+                            <label><input type="radio" name="site" value="Chester"/>Chester Site</label>
+                            <label><input type="radio" name="site" value="Chester"/>Bristol Site</label>
+                        </p>
+                        <hr/>
+                        <label>Number of people: <input name="quantity"/></label>
+                        <button type="submit">Submit & Pay</button>
+                    </form>
+                </div>
             </div>
         </div>
     );

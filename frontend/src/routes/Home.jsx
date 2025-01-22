@@ -1,22 +1,12 @@
-import React, { useEffect, useState } from "react";
-import capybara from '../assets/Capybara.jpg';
-import axios from 'axios';
-import '../styles/Style.css'
-import giraffe from '../assets/giraffe.png'
+import React from "react";
+import '../styles/Style.css';
+import giraffe from '../assets/giraffe.png';
+import snapchat from '../assets/snapchatLogo.png';
+import instagram from '../assets/instagramLogo.webp';
+import facebook from '../assets/facebookLogo.png';
 
 function Home() {
-    const [message, setMessage] = useState('');
-    const [different, setDiff] = useState('');
-
-    useEffect(() => {
-        axios.get('http://localhost:3001')
-            .then(response => setMessage(response.data))
-            .catch(error => console.error('Error fetching data:', error));
-        axios.get('http://localhost:3001/a')
-            .then(response => setDiff(response.data))
-            .catch(error => console.error('Error fetching data:', error));
-    },[]);
-
+    
     return(
         <div className="page d-flex flex-column justify-content-center align-items-center vh-100">
             <nav className="navigation sticky-div">
@@ -31,10 +21,17 @@ function Home() {
                     
                 </ul>
             </nav>
-            <div className="contain text-center justify-content-center align-items-center">
-                <img src={capybara} alt="Paul the Capybara"/>
-                <p>{message}</p>
-                <p>{different}</p>
+            <div className="container-home text-center justify-content-center align-items-center">
+                <h1 className="text-white">Your adventure awaits!</h1>
+                <button  id="book-now"><a href="/booking">Book Now!</a></button>
+            </div>
+            <div className="home-footer">
+                <h2>Follow us at @RigetZooAdventures on...</h2>
+                <div id="logo-tray">
+                    <img src={snapchat} alt="snapchat logo" width={80}/>
+                    <img src={instagram} alt="instagram logo" width={80}/>
+                    <img src={facebook} alt="facebook logo" width={80}/>
+                </div>
             </div>
         </div>
     );
