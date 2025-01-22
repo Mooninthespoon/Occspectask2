@@ -42,3 +42,21 @@
     margin-top: 15px;
     margin-left: 20px;
 }
+
+.navigation ul{
+    float: right;
+}
+
+.navigation ul li{
+    float: left;
+    list-style: none;
+    color: white;
+    padding: 20px;
+    padding-top: 12px;
+}
+
+.navigation ul li a{
+    color: white;
+    text-decoration: none;
+}
+

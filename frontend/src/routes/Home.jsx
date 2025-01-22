@@ -21,10 +21,15 @@ function Home() {
         <div className="page d-flex flex-column justify-content-center align-items-center vh-100">
             <nav className="navigation sticky-div">
                 <div className="icon-text ">
-                    <img src={giraffe} width={50} alt="giraffe icon"/>
+                    <a href="/"><img src={giraffe} width={50} alt="giraffe icon"/></a>
                     <h2 className="Title">Riget Zoo Adventures</h2>
                 </div>
-                <div></div>
+                <ul>
+                    <li><a href="Home.jsx">Home</a></li>
+                    <li>Hotels</li>
+                    <li>Booking</li>
+                    
+                </ul>
             </nav>
             <div className="contain text-center justify-content-center align-items-center">
                 <img src={capybara} alt="Paul the Capybara"/>
