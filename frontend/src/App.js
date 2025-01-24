@@ -4,6 +4,7 @@ import Home from './routes/Home';
 import Error from './routes/Error';
 import Hotels from './routes/Hotels';
 import Booking from './routes/Booking';
+import Dev from './routes/dev';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path='/' element={<Home/>} />
           <Route path='/hotels' element={<Hotels/>} />
           <Route path='/booking' element={<Booking/>} />
+          <Route path='/dev' element={<Dev/>}/>
           <Route path='*' element={<Error/>} />
         </Routes>
       </Router>

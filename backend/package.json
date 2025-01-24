@@ -4,7 +4,7 @@
   "PORT": 3001,
   "description": "backend server for RZA",
   "main": "server.js",
-  "type": "module",
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",

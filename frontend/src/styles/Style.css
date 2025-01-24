@@ -152,12 +152,13 @@
 
 #animation{
     margin: 50px;
+    width: 200px;
 }
 
 #go-home{
-    background-color: red;
+    background-color: rgb(241, 180, 9);
     border-style:double;
-    border-color: crimson;
+    border-color: rgb(241, 180, 9);
     border-radius: 10px;
     margin: 10px;
     width: 50%;
@@ -165,11 +166,7 @@
 
 #go-home a{
     text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
-    padding: 10px;
-    margin: 5px;
-    
 }
 
 /*Booking page*/
@@ -215,4 +212,19 @@
 .hotel-card-details{
     float: right;
     width:50%;
+}
+
+.book-this-room{
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(241, 180, 9);
+    float: right;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.book-this-room a{
+    text-decoration: none;
+    color: white;
 }

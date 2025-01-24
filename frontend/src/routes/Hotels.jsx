@@ -41,6 +41,7 @@ function Hotels() {
                         <h4>{roomPrice} / night</h4>
                         <p>{roomDescription}</p>
                     </div>
+                    <button className="book-this-room"><a href="/dev">Book this room</a></button>
 
                 </div>
             )
