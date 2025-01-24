@@ -49,7 +49,7 @@ function Booking() {
                         </p>
                         <hr/>
                         <label>Number of people: <input name="quantity"/></label>
-                        <button type="submit">Submit & Pay</button>
+                        <button id="booking_submit" type="submit">Submit & Pay</button>
                     </form>
                 </div>
             </div>

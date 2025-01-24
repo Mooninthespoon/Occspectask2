@@ -131,7 +131,7 @@
 /* Error page Styles */
 
 .pageerror{
-    background-image: url(../assets/Error-Landscape.jpg);
+    background-image: url(../assets/Error-Landscape2.jpg);
     background-size: cover;
     background-position: center;
     flex-wrap: wrap;
@@ -143,6 +143,7 @@
     padding: 20px;
     border-radius: 10%;
     border-style: none;
+    box-shadow: 20px 20px 20px 20px #0000006c;
 }
 
 #error{
