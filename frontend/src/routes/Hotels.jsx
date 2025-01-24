@@ -1,21 +1,53 @@
-import React, { useEffect, useState } from "react";
-import capybara from '../assets/Capybara.jpg';
+import React, {useState,useEffect} from "react";
 import axios from 'axios';
-import '../styles/Style.css'
-import giraffe from '../assets/giraffe.png'
+import '../styles/Style.css';
+import giraffe from '../assets/giraffe.png';
+import roomPicture from '../assets/hotel-card-test.jpg';
+
 
 function Hotels() {
-    const [message, setMessage] = useState('');
-    const [different, setDiff] = useState('');
+
+    const [roomName, setRoomName] = useState('');
+    const [roomPrice, setRoomPrice] = useState('');
+    const [roomDescription, setRoomDesc] = useState('')
+
+    useEffect(()=>{
+        axios.get('http://localhost:3001/room-desc')
+            .then(respone => setRoomDesc(respone.data))
+            .catch(error=> console.error('Error fetching data: ',error));
+    })
+
+    useEffect(()=> {
+        axios.get('http://localhost:3001/room-price')
+            .then(respone => setRoomPrice(respone.data))
+            .catch(error => console.error('Error fetching data: ', error));
+    })
 
     useEffect(() => {
-        axios.get('http://localhost:3001')
-            .then(response => setMessage(response.data))
+        axios.get('http://localhost:3001/room-name')
+            .then(response => setRoomName(response.data))
             .catch(error => console.error('Error fetching data:', error));
-        axios.get('http://localhost:3001/a')
-            .then(response => setDiff(response.data))
-            .catch(error => console.error('Error fetching data:', error));
+        
     },[]);
+
+    class HotelCard extends React.Component {
+        render(){
+            return(
+                <div className="hotel-card">
+                    <img src={roomPicture} alt="Hotel Room with large window overlooking Lion Enclosure"/>
+                    <div className="hotel-card-details" >
+                        <h3>{roomName}</h3>
+                        <hr/>
+                        <h4>{roomPrice} / night</h4>
+                        <p>{roomDescription}</p>
+                    </div>
+
+                </div>
+            )
+        }
+    }
+
+    
 
     return(
         <div className="page d-flex flex-column justify-content-center align-items-center vh-100">
@@ -31,12 +63,8 @@ function Hotels() {
                     
                 </ul>
             </nav>
-            <div className="contain text-center justify-content-center align-items-center">
-                <img src={capybara} alt="Paul the Capybara"/>
-                <p>THIS IS THE HOTEL SCREEN</p>
-                <p>{message}</p>
-                <p>{different}</p>
-            </div>
+            <HotelCard/>
+            
         </div>
     );
 }

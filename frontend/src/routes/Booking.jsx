@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import axios from 'axios';
+import React from "react";
+//import axios from 'axios';
 import '../styles/Style.css'
 import giraffe from '../assets/giraffe.png'
 
