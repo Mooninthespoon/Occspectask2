@@ -2,18 +2,31 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-
+require('dotenv').config({path: './.env'});
 
 const app = express();
 const PORT = 3001;
 
 app.use(cors());
 app.use(bodyParser())
+app.use(express.json());
 
+// Connecting to atlas
+const uri = process.env.ATLAS_URI;
 
+mongoose.connect(uri,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
+const connection = mongoose.connection;
+connection.once("open",() => {
+    console.log("MongoDB ATLAS connected (lets go!)");
+});
 
-app.get('/',(req,res) => {
+//not connecting to ALTAS
+
+app.get('/paul',(req,res) => {
     res.send('the backend says this is Paul, the Capybara')
 });
 
@@ -34,18 +47,10 @@ app.get('/room-name',(req,res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
+    console.log(`Server is listening at http://localhost:${PORT}`);
 });
 
 app.post('/book',function(req,res){
     res.render('some-file',{data:req.body.name});
 });
 
-mongoose.connect('mongodb://localhost/backend', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
-    console.log('Connected to MongoDB :)');
-}).catch(error => {
-    console.error(error);
-});
